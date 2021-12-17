@@ -2,6 +2,7 @@
 let posts = () => {
     let db = new Map(); // Temporary in-memory 'db'
     db.set(1, {
+        id: 1,
         title: 'Test Post',
         content: '# Hello World \n ### Authored by: Griffin Johnson \n \n > Hello blog',
         time: new Date()
@@ -40,6 +41,7 @@ let posts = () => {
             console.log('Creating Posts...');
 
             db.set(id, {
+                id: id,
                 title: title,
                 content: content,
                 time: new Date()
@@ -62,6 +64,7 @@ let posts = () => {
             }
             
             db.set(id, {
+                id: id,
                 title: title,
                 content: content,
                 time: new Date()
