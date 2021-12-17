@@ -5,8 +5,8 @@ const routes = require('./routes/setup.js');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+app.use(cors());
 
 routes.init(app);
-app.use(cors());
 app.listen(PORT);
 console.log(`App listening on port ${PORT}`);
