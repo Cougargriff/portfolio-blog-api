@@ -16,7 +16,7 @@ let posts = () => {
                 results.push(value);
             });
 
-            res.json(results); 
+            res.status(200).json(results); 
         },
         getPost: (req, res) => {
             const id = req.params.id || null;
@@ -30,7 +30,7 @@ let posts = () => {
             }
 
             const result = db.get(id);
-            res.json(id);
+            res.status(200).json(id);
         },
         createPost: (req, res) => {
             const id = map.size + 1;
@@ -44,6 +44,8 @@ let posts = () => {
                 content: content,
                 time: new Date()
             });
+
+            res.status(200);
 
         },
         editPost: (req, res) => {
@@ -64,6 +66,8 @@ let posts = () => {
                 content: content,
                 time: new Date()
             });
+
+            res.status(200);
         },
         deletePost: (req, res) => {
             const id = req.params.id || null;
