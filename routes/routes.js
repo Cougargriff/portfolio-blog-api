@@ -20,6 +20,11 @@ const routes = [
         path: '/posts/:id',
         method: 'PUT',
         action: [posts.editPost] 
+    },
+    {
+        path: '/posts',
+        method: 'POST',
+        action: [posts.createPost] 
     }
 ];
 
