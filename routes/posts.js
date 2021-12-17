@@ -1,8 +1,8 @@
 // TODO -> request validation
 let posts = () => {
     let db = new Map(); // Temporary in-memory 'db'
-    db.set(1, {
-        id: 1,
+    db.set('1', {
+        id: '1',
         title: 'Test Post',
         content: '# Hello World \n ### Authored by: Griffin Johnson \n \n > Hello blog',
         time: new Date()
