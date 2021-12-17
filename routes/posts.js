@@ -31,7 +31,7 @@ let posts = () => {
             }
 
             const result = db.get(id);
-            res.status(200).json(id);
+            res.status(200).json(result);
         },
         createPost: (req, res) => {
             const id = map.size + 1;
