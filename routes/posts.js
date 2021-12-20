@@ -1,12 +1,13 @@
 // TODO -> request validation
 let posts = () => {
     let db = new Map(); // Temporary in-memory 'db'
-    db.set('1', {
-        id: '1',
-        title: 'Test Post',
-        content: '# Hello World \n ### Authored by: Griffin Johnson \n \n > Hello blog',
-        time: new Date()
-    })
+    let COUNT = 1;
+    // db.set('1', {
+    //     id: '1',
+    //     title: 'Test Post',
+    //     content: '# Hello World \n ### Authored by: Griffin Johnson \n \n > Hello blog',
+    //     time: new Date()
+    // })
 
     return {
         getPosts: (req, res) => {
@@ -34,7 +35,7 @@ let posts = () => {
             res.status(200).json(result);
         },
         createPost: (req, res) => {
-            const id = db.size + 1;
+            const id = COUNT + 1;
             const title = req.body.title;
             const content = req.body.content;
             
@@ -46,6 +47,7 @@ let posts = () => {
                 content: content,
                 time: new Date()
             });
+            COUNT ++;
 
             res.status(200).json({error: false});
 
