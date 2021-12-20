@@ -35,7 +35,7 @@ let posts = () => {
             res.status(200).json(result);
         },
         createPost: (req, res) => {
-            const id = COUNT + 1;
+            const id = `${COUNT + 1}`;
             const title = req.body.title;
             const content = req.body.content;
             
