@@ -4,6 +4,10 @@ const cors = require('cors');
 const routes = require('./routes/setup.js');
 
 const app = express();
+app.use(express.urlencoded({
+    extended: true
+}));
+
 const PORT = process.env.PORT || 3001;
 app.use(cors());
 

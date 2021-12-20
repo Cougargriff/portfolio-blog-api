@@ -47,7 +47,7 @@ let posts = () => {
                 time: new Date()
             });
 
-            res.status(200);
+            res.status(200).json({error: false});
 
         },
         editPost: (req, res) => {
@@ -55,7 +55,7 @@ let posts = () => {
             const title = req.body.title;
             const content = req.body.content;
 
-            console.log('Editing Posts...');
+            console.log('Editing Post...');
             if (!db.has(id)) {
                 res.status(400).json({
                     error: true,
@@ -70,7 +70,9 @@ let posts = () => {
                 time: new Date()
             });
 
-            res.status(200);
+            res.status(200).json({
+                error: false
+            });
         },
         deletePost: (req, res) => {
             const id = req.params.id || null;
@@ -84,7 +86,7 @@ let posts = () => {
             }
 
             db.delete(id);
-            res.status(200);
+            res.status(200).json({error: false});
         }
     };
 };
